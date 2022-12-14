@@ -1,16 +1,16 @@
-import React from 'react'
-import LeftContent from './LeftContent'
-import RightContent from './RightContent'
+import React from "react";
+import styled from "styled-components";
+import LeftContent from "./LeftContent";
+import RightContent from "./RightContent";
+import '../Styles/Resume.css';
 
-
-const Resumes = ({data, color}) => {
+function Resumes({ data, color }) {
   return (
-    <div className='resume' id='resume'>
-        <LeftContent data = {data} color={color}/>
-        <RightContent data = {data} color={color}/>
-        <h3>Hello world</h3>
+    <div className="resume">
+      <LeftContent data={data} color={color} />
+      <RightContent data={data} color={color} />
     </div>
-  )
+  );
 }
 
-export default Resumes
+export default Resumes;

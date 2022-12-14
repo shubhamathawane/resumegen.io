@@ -85,6 +85,7 @@ function App() {
                       setData={setData}
                       preset={preset}
                       setColor={setColor}
+                      color={color}
                     />
                   </Left>
 
@@ -117,7 +118,7 @@ function App() {
             )}
           </Route> */}
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
