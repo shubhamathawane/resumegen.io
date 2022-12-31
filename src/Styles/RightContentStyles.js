@@ -39,7 +39,7 @@ export const Experiencee = styled.div`
   padding: 10px 10px 0 10px;
   font-size: 14px;
 `;
-export const Projects = styled.div`
+export const Projectz = styled.div`
   padding: 10px 10px 0 10px;
   font-size: 14px;
 `;

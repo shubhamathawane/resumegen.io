@@ -68,10 +68,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        {/* <Header />
         <br />
         <br />
-        <br />
+        <br /> */}
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route

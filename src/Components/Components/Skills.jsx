@@ -6,6 +6,7 @@ const Skills = ({ data, color }) => {
     <div className="skills">
       <p className="heading">Skills</p>
       <hr />
+      
       <div className="skill-container">
         {skills.map((item, index) => {
           if (item.trim().length > 0) {
@@ -16,7 +17,7 @@ const Skills = ({ data, color }) => {
                   backgroundColor: `${color.skills}`,
                   boxShadow: `0 0 0 1x ${color.primary}`,
                 }}
-                className="item"
+                className='item'
               >
                 {item}
               </div>

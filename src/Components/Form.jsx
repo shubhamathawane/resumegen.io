@@ -43,6 +43,13 @@ const Form = ({ data, setData, preset, setColor }) => {
     cursor: "pointer",
   };
 
+  const changeColor = (item) => {
+    setColor({
+      primary:item.primary,
+      background:item.background,
+      skills: item.skills,
+    })
+  }
 
   const handlePhotoUpload = (files) => {
     setData({
@@ -59,7 +66,13 @@ const Form = ({ data, setData, preset, setColor }) => {
       <Theme>
         <p>Select Theme</p>
         <Color>
-          <ColorType>1, 2, 4,</ColorType>
+          {/* <ColorType>1, 2, 4,</ColorType> */}
+          {preset.map((item, key) => {
+            <ColorType
+              key={key}
+              onclick={() => changeColor(item)}
+            ></ColorType>
+          })}
         </Color>
       </Theme>
 
