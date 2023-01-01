@@ -1,3 +1,4 @@
+import { purple } from '@mui/material/colors'
 import React from 'react'
 import { Container, Footer_bottom, Footer_Content, Socials } from './FooterStyled'
  
@@ -11,7 +12,7 @@ const Footer = () => {
                 <li><a href="">Facebook</a></li>
             </Socials>
             <Footer_bottom>
-                <p>Copyright &copy;2022 ResumeGen.io </p>
+                <p>Created with ♥ by<a href="https://github.com/shubhamathawane/" style={{color: "white"}}> Shubham Athawane</a> </p>
             </Footer_bottom>
         </Footer_Content>
     </Container>

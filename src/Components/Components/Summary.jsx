@@ -6,7 +6,9 @@ const Summary = ({ data, color }) => {
   const summary = data.Summary;
   return (
     <div className="Summary">
-      <p className="heading">Summary</p>
+      <p className="heading" style={{ color: `${color.primary}` }}>
+        Summary
+      </p>
       <hr style={{ borderColor: `${color.primary}` }} />
       <div className="item">{summary}</div>
     </div>

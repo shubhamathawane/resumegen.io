@@ -5,13 +5,21 @@ const Interest = ({ data, color }) => {
   return (
     <div className="skills">
       <p className="heading">Interest</p>
-      <hr />
+      <hr style={{ borderColor: `${color.primary}` }} />
       <div className="skills-container">
         {skills.map((item, index) => {
           if (item.trim().length > 0) {
-            return <div key={index}>
-                Coding, singing dddddd
-            </div>;
+            return (
+              <div
+                className="item"
+                key={index}
+                style={{ backgroundColor: `${color.primary}`, color:"white" }}
+              >
+                {item}
+              </div>
+            );
+          } else {
+            return false;
           }
         })}
       </div>

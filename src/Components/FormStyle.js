@@ -54,7 +54,13 @@ export const Formm = styled.div`
     margin-top: 20px;
     margin-right: 35px;
 `;
-export const Contact = styled.div``;
+export const Contact = styled.div`
+  input{
+    border-radius:5px;
+    height:20px;
+    width: 360px;
+  }
+`;
 
 export const Heading = styled.h3`font-size: 18px;
 font-weight: bold;`;

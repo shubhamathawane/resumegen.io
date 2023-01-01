@@ -14,27 +14,29 @@ const Experience = ({ data, color }) => {
   const exp = data.experience;
   console.log(exp);
   return (
-    <Experiencee>
-      <Heading>Experience</Heading>
-      <HR />
+    <div className="experience">
+      <p className="heading" style={{ color: `${color.primary}` }}>
+        Experience
+      </p>
+      <hr style={{ borderStyle: `${color.primary}` }} />
       {exp.map((item, index) => (
-        <RowTable>
-          <div key={index} className="left-column">
+        <div className="row-table" key={index}>
+          <div className="left-column">
             {item.year && (
-              <Year>
+              <p className="year">
                 <TodayOutlined style={{ height: "15px" }} />
                 {item.year}
-              </Year>
+              </p>
             )}
           </div>
           <div className="right-column">
-            <Position>{item.position}</Position>
-            <Company>{item.position}</Company>
-            <Description>{item.description}</Description>
+            <p className="position">{item.position}</p>
+            <p className="company">{item.company}</p>
+            <p className="description">{item.description}</p>
           </div>
-        </RowTable>
+        </div>
       ))}
-    </Experiencee>
+    </div>
   );
 };
 
