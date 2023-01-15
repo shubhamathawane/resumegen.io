@@ -18,7 +18,7 @@ const Experience = ({ data, color }) => {
       <p className="heading" style={{ color: `${color.primary}` }}>
         Experience
       </p>
-      <hr style={{ borderStyle: `${color.primary}` }} />
+      <hr style={{ borderColor: `${color.primary}` }} />
       {exp.map((item, index) => (
         <div className="row-table" key={index}>
           <div className="left-column">

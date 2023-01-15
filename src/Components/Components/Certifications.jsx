@@ -19,7 +19,7 @@ const Certifications = ({ data, color }) => {
       <p className="heading" style={{ color: `${color.primary}` }}>
         Certifications
       </p>
-      <hr style={{ color: `${color.primary}` }} />
+      <hr style={{ borderColor: `${color.primary}` }} />
       {certificates.map((item, index) => (
         <div className="row-table" key={index}>
           <div className="left-column">

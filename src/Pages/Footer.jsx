@@ -12,7 +12,7 @@ const Footer = () => {
                 <li><a href="">Facebook</a></li>
             </Socials>
             <Footer_bottom>
-                <p>Created with ♥ by<a href="https://github.com/shubhamathawane/" style={{color: "white"}}> Shubham Athawane</a> </p>
+                <p>Created with ♥ by <a href="https://github.com/shubhamathawane/" style={{color: "white"}}> Shubham Athawane</a> </p>
             </Footer_bottom>
         </Footer_Content>
     </Container>

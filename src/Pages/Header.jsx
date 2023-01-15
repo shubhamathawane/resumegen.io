@@ -55,9 +55,11 @@ const Slink = styled(Link)`
   text-decoration: none;
   color: #67bc98;
   transition: all 0.3s ease-in;
-  font-size: 0.9rem;
+  font-size: 1rem;
   &:hover {
-    color: #7b7fda;
+    color: white;
+    background-color:#67bc98;
+    border-radius:7px;
   }
 `
 
@@ -65,11 +67,13 @@ const Nav = styled.div`
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
+  font-size:30px;
   align-items: center;
   font-family: jetBrains Mono;
   flex-wrap: wrap;
   /* background: ${({ theme }) => theme.bg}; */
-  background-color: black;
+  /* background-color: black; */
+  background-color:white;
   position: absolute;
   top: 0;
   left: 0;

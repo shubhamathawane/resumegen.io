@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Main = styled.div`
   position: relative;
   overflow: hidden;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: gray;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 `;

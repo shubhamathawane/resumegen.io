@@ -4,11 +4,13 @@ import LeftContent from "./LeftContent";
 import RightContent from "./RightContent";
 import '../Styles/Resume.css';
 
-function Resumes({ data, color }) {
+// style={{ fontFamily: `${font.value}` }}
+
+function Resumes({ data, color, font }) {
   return (
-    <div className="resume">
-      <LeftContent data={data} color={color} />
-      <RightContent data={data} color={color} />
+    <div className="resume" id="resume" >
+      <LeftContent data={data} font={font} color={color} />
+      <RightContent data={data} font={font} color={color} />
     </div>
   );
 }

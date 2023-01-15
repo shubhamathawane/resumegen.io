@@ -4,9 +4,10 @@
   height: 250vh;
   display: flex;
   font-family: "Roboto", Helvetica, sans-serif;
+  
 }
 .left-content {
-  width: 550px;
+  width: 260px;
   background-color: #f0f0f0;
   color: #0a0a0a;
   padding: 5px 5px;

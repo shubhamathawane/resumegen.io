@@ -7,7 +7,7 @@ import Experience from "./Components/Experience";
 import Projects from "./Components/Projects";
 import Summary from "./Components/Summary";
 
-const RightContent = ({ data, color }) => {
+const RightContent = ({ data, color, font }) => {
   // const Right_Content = styled.div`
   //   hr {
   //     margin: 1.5px 0 5px 0;
@@ -31,7 +31,7 @@ const RightContent = ({ data, color }) => {
   };
   return (
     <div className="right-content">
-      {check(data.Summary) && <Summary data={data} color={color} />}
+      {check(data.Summary) && <Summary data={data} font={font} color={color} />}
       {check(data.Summary) && <Education data={data} color={color} />}
       {check(data.Summary) && <Experience data={data} color={color} />}
       {check(data.Summary) && <Certifications data={data} color={color} />}

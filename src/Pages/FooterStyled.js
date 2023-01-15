@@ -2,27 +2,29 @@ import styled from "styled-components";
 
 //footer
 export const Container = styled.div`
-    background-color: black;
+    background-color: white;
+    color:black;
     height: auto;
     width: 100vw;
     font-family: 'JetBrains Mono', monospace;
     padding-top: 40px;
-    color: #000;
+    /* color: #000; */
 
 `
 //footer_content
 export const Footer_Content = styled.div`
     display: flex;
-    color: white;
+    /* color: white; */
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     h3{
         font-size: 1.8rem;
-        font-weight: 400;
+        font-weight: c 400;
         text-transform: capitalize;
         line-height: 3rem;
+        color: gray;
     }
     p{
         max-width: 500px;
@@ -38,7 +40,6 @@ export const Socials = styled.ul`
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
-
     li{
         margin: 0 10px;
     }
@@ -56,7 +57,7 @@ export const Socials = styled.ul`
 `
 
 export const Footer_bottom = styled.div`
-    background-color:#333;
+    background-color:#67bc98;
     font-family: 'JetBrains Mono', monospace;
     width: 100vw;
     padding: 20px 0;
@@ -70,5 +71,10 @@ export const Footer_bottom = styled.div`
         text-transform: uppercase;
         opacity: .4;
         font-weight:200;
+    }
+    a{
+        :hover{
+                text-decoration: underline;
+        }
     }
 `

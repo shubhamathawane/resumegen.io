@@ -20,6 +20,20 @@ function App() {
     { primary: "#3f51b5", background: "#ebedf7", skills: "#e1e3f8" },
   ]);
 
+  const fonts = [
+    { label: "Calibri", value: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif", id: 1 },
+    { label: "Times New Roman", value: "Times New Roman", id: 2 },
+    { label: "Arial", value: "Arial", id: 3 },
+    { label: "Verdana", value: "Verdana", id: 4 },
+    { label: "Cambria", value: "Cambria", id: 5 },
+    { label: "Havtic", value: "'Roboto', Helvetica, 'sans-serif'", id:6}
+  ];
+
+
+
+
+  const [font, setFont] = useState("");
+
   const [color, setColor] = useState({
     primary: "#009688",
     background: "#e5f4f3",
@@ -47,10 +61,10 @@ function App() {
   `;
   const Right = styled.div`
     width: 68%;
-	  position: absolute;
-	  right: 0;
-	  height: 100%;
-	  overflow-y: auto;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    overflow-y: auto;
   `;
   const Button = styled.button`
     padding: 5px 13px;
@@ -68,7 +82,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-      
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route
@@ -83,16 +96,23 @@ function App() {
                       preset={preset}
                       setColor={setColor}
                       color={color}
+                      setPreset={setPreset}
+                      font={font}
+                      fonts={fonts}
+                      setFont={setFont}
                     />
                   </Left>
 
                   <Right>
-                    <Resumes ref={printRef} data={data} color={color} />
+                    <Resumes
+                      ref={printRef}
+                      data={data}
+                      font={font}
+                      color={color}
+                    />
                   </Right>
 
-                  <Button onClick={handlePrint}>
-                    Download CV
-                  </Button>
+                  <Button onClick={handlePrint}>Download CV</Button>
                 </>
               )
             }

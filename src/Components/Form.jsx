@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import "../Styles/form.css";
 import {
   Color,
   ColorType,
@@ -19,8 +20,7 @@ import {
 import Files from "react-files";
 import { Heading } from "../Pages/HomeStyled";
 
-const Form = ({ data, setData, preset, setColor }) => {
-
+const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
   var { name, photoUrl, location, phone, email, linkedin, github, website } =
     data.contact;
 
@@ -45,36 +45,54 @@ const Form = ({ data, setData, preset, setColor }) => {
 
   const changeColor = (item) => {
     setColor({
-      primary:item.primary,
-      background:item.background,
+      primary: item.primary,
+      background: item.background,
       skills: item.skills,
-    })
-  }
+    });
+  };
+  useEffect(() => {
+    console.log(font);
+  }, []);
+
+  const handleFontChange = (e) => {
+    setFont(e.target.value);
+  };
 
   const handlePhotoUpload = (files) => {
     setData({
       ...data,
-      contact:{
+      contact: {
         ...data.contact,
-        photoUrl: URL.createObjectURL(files.length -1),
+        photoUrl: URL.createObjectURL(files.length - 1),
       },
-    })
-  }
+    });
+  };
 
   return (
-    <Form_Container>
-      <Theme>
-        <p>Select Theme</p>
-        <Color>
-          {/* <ColorType>1, 2, 4,</ColorType> */}
-          {preset.map((item, key) => {
-            <ColorType
+    <div className="form-container">
+      <div className="theme">
+        <p>Select Theme:</p>
+        <div className="color">
+          {preset.map((item, key) => (
+            <div
               key={key}
-              onclick={() => changeColor(item)}
-            ></ColorType>
-          })}
-        </Color>
-      </Theme>
+              className="colorType"
+              onClick={() => changeColor(item)}
+              style={{ backgroundColor: `${item.primary}` }}
+            ></div>
+          ))}
+        </div>
+      </div>
+      <div className="theme">
+        <p>Select Font</p>
+        <select className="select" onChange={handleFontChange}>
+          {fonts.map((font) => (
+            <option 
+            style={{fontFamily: `${font.value}`}}
+            value={font.value}>{font.label}</option>
+          ))}
+        </select>
+      </div>
 
       <div style={{ display: "flex" }}>
         <div>
@@ -379,7 +397,7 @@ const Form = ({ data, setData, preset, setColor }) => {
           </div>
         </Section_Projects>
       </Formm>
-    </Form_Container>
+    </div>
   );
 };
 
