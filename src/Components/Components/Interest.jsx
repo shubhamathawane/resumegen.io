@@ -1,13 +1,13 @@
 import React from "react";
 
 const Interest = ({ data, color }) => {
-  const skills = data.skills;
+  const interests = data.interests;
   return (
     <div className="skills">
-      <p className="heading">Interest</p>
+      <p className="heading" style={{ color: `${color.primary}` }}>Interests</p>
       <hr style={{ borderColor: `${color.primary}` }} />
       <div className="skills-container">
-        {skills.map((item, index) => {
+        {interests.map((item, index) => {
           if (item.trim().length > 0) {
             return (
               <div

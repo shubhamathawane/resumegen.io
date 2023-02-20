@@ -34,7 +34,7 @@ export const Description = styled.div`
 
 export const Heading = styled.h1`
   margin: 0;
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   width: 98%;
   word-spacing: 5px;
 `;

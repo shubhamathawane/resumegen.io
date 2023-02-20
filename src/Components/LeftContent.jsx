@@ -36,7 +36,7 @@ const LeftContent = ({ data, color }) => {
       {check(data.interests) && <Interest data={data} color={color}/>}
       {check(data.Involvement) && <Involvement data={data} color={color}/>}
     </div>
-  );
+  );    
 };
 
 export default LeftContent;

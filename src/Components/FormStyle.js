@@ -75,6 +75,7 @@ export const Item = styled.div`
 export const Section_Summary = styled.div``;
 export const Section_Involvement = styled.div``;
 export const Section_Skills = styled.div``;
+export const Section_interests = styled.div``;
 export const Section_Education = styled.div``;
 export const Section_Experience = styled.div``;
 export const Section_Certification = styled.div``;

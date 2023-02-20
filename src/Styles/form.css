@@ -7,7 +7,7 @@
 }
 .form-container .theme p {
   font-size: 18px;
-  font-weight: bold; 
+  font-weight: bold;
   margin-top: -3px;
 }
 .theme,
@@ -16,10 +16,9 @@
 }
 
 .select {
-    margin-left: 10px;
-    height: 20px;
-    border-radius: 7px;
-    
+  margin-left: 10px;
+  height: 20px;
+  border-radius: 7px;
 }
 .theme .color .colorType {
   height: 20px;
@@ -49,4 +48,62 @@
 .item textarea {
   width: 100%;
   margin: 5px 0px 5px 0;
+}
+
+.main-heading {
+  /* display: flex;
+  color: gray;
+  margin-top: 30px;
+  gap: 10px;
+  padding: 5px 0 5px 15px;
+  background: #f1f4ff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+}
+
+.main-heading p {
+  color: gray;
+  cursor: pointer;
+  border-radius: 100%;
+  margin-left: 230px;
+  font-size: 1.3rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  background: #fff;
+  padding: 5px;
+}
+
+.answers {
+  padding: 30px 20px 40px 20px;
+  font-size: 15px;
+  word-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.7;
+  background: #fcf5f5;
+  border-radius: 7px;
+  color: rgb(40, 37, 53);
+}
+.summary {
+  padding: 20px 10px 30px 10px;
+  font-size: 15px;
+  word-spacing: 2px;
+  background: #fcf5f5;
+  border-radius: 7px;
+  color: rgb(40, 37, 53);
+}
+
+.btnDone{
+  padding: 10px;
+  height: 40%;
+  background-color: #389969;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.textAreas{
+  background-color: azure;
+  border-radius:7px;
+  
+  border-style: none;
 }

@@ -4,7 +4,7 @@ const Involvement = ({ data, color }) => {
   const involvement = data.Involvement;
   return (
     <div className="involvement">
-      <p className="headign">Involvement</p>
+      <p className="heading" style={{ color: `${color.primary}` }}>Involvement</p>
       <hr />
       {involvement.map((item, index) => (
         <div className="involvement-item">
