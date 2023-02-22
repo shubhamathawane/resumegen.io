@@ -59,9 +59,6 @@ function App() {
     { label: "Havtic", value: "'Roboto', Helvetica, 'sans-serif'", id:6}
   ];
 
-
-
-
   const [font, setFont] = useState("");
 
   const [color, setColor] = useState({
