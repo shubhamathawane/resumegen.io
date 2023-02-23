@@ -11,36 +11,6 @@ import styled from "styled-components";
 import Resumes from "./Components/Resumes";
 import "./Styles/App.css";
 
-const Left = styled.div`
-  width: 32%;
-  background-color: #1a1919;
-  color: rgb(249, 250, 248);
-  position: absolute;
-  height: 100%;
-  overflow-y: auto;
-`;
-
-const Right = styled.div`
-  width: 68%;
-  position: absolute;
-  right: 0;
-  height: 100%;
-  overflow-y: auto;
-`;
-
-const Button = styled.button`
-  padding: 5px 13px;
-  border-radius: 4px;
-  font-size: 15px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: 20px 25px;
-  color: rgb(239, 245, 243);
-  cursor: pointer;
-  background-color: #31a153cc;
-`;
-
 function App() {
   const [data, setData] = useState();
   const [preset, setPreset] = useState([
@@ -58,6 +28,9 @@ function App() {
     { label: "Cambria", value: "Cambria", id: 5 },
     { label: "Havtic", value: "'Roboto', Helvetica, 'sans-serif'", id:6}
   ];
+
+
+
 
   const [font, setFont] = useState("");
 
@@ -77,6 +50,34 @@ function App() {
   const handlePrint = useReactToPrint({
     content: () => printRef.current,
   });
+
+  const Left = styled.div`
+    width: 32%;
+    background-color: #1a1919;
+    color: rgb(249, 250, 248);
+    position: absolute;
+    height: 100%;
+    overflow-y: auto;
+  `;
+  const Right = styled.div`
+    width: 68%;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    overflow-y: auto;
+  `;
+  const Button = styled.button`
+    padding: 5px 13px;
+    border-radius: 4px;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px 25px;
+    color: rgb(239, 245, 243);
+    cursor: pointer;
+    background-color: #31a153cc;
+  `;
 
   return (
     <div className="App">
