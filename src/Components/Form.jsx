@@ -28,7 +28,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
   var Involvement = data.Involvement;
   var Summary = data.Summary;
   var education = data.education;
-  // var skills = data.skills;
   var experience = data.experience;
   var certifications = data.certifications;
   var projects = data.projects;
@@ -47,34 +46,41 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
     cursor: "pointer",
   };
 
+  const handlePhotoUpload = (files) => {
+    setData({
+      ...data,
+      contact: {
+        ...data.contact,
+        photoUrl: URL.createObjectURL(files[files.length - 1]),
+      },
+    });
+  };
+
+  const [skills, setSkills] = useState("");
+  useEffect(() => {
+    var temp = "";
+    data.skills.map((item) => (temp = temp + item + ","));
+    setSkills(temp);
+  }, [data]);
+
+  // interests
+  const [interests, setInterests] = useState("");
+
   const changeColor = (item) => {
     setColor({
       primary: item.primary,
       background: item.background,
       skills: item.skills,
     });
-    item.preventDefault();
   };
-  useEffect(() => {
-    console.log(font);
-  }, []);
 
   const handleFontChange = (e) => {
     setFont(e.target.value);
     e.preventDefault();
   };
 
-  const handlePhotoUpload = (files) => {
-    setData({
-      ...data,
-      contact: {
-        ...data.contact,
-        photoUrl: URL.createObjectURL(files[files.length -1 ]),
-      },
-    });
-  };
-
   const handleContact = (e) => {
+    e.preventDefault();
     setData({
       ...data,
       contact: {
@@ -82,10 +88,27 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
         [e.target.name]: e.target.value,
       },
     });
-    e.preventDefault();
   };
 
   // Add row
+  const handleSkills = (e) => {
+    var array = skills.split(",");
+    setData({
+      ...data,
+      skills: array,
+    });
+    e.preventDefault();
+  };
+
+  const handleInterests = (e) => {
+    e.preventDefault();
+    var array = interests.split(",");
+    setData({
+      ...data,
+      interests: array,
+    });
+  };
+
   const addRow = (section, structure) => {
     var temp = section;
     temp.push(structure);
@@ -106,23 +129,9 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
     });
   };
 
-  // skills
-
-  const [skills, setSkills] = useState("");
-  // interests
-  const [interests, setInterests] = useState("");
-
-  useEffect(() => {
-    var temp = "";
-    data.interests.map((item) => (temp = temp + item + ","));
-    setInterests(temp);
-  }, [data]);
-
-  // handle Change
   const handleChange = (e, index, section, type) => {
     var temp = section;
     temp[index][type] = e.target.value;
-
     setData({
       ...data,
       section: temp,
@@ -132,25 +141,9 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
 
   useEffect(() => {
     var temp = "";
-    data.skills.map((item) => (temp = temp + item + ","));
-    setSkills(temp);
+    data.interests.map((item) => (temp = temp + item + ","));
+    setInterests(temp);
   }, [data]);
-
-  const handleSkills = () => {
-    var array = skills.split(",");
-    setData({
-      ...data,
-      skills: array,
-    });
-  };
-  // interests
-  const handleInterests = () => {
-    var array = interests.split(",");
-    setData({
-      ...data,
-      interests: array,
-    });
-  };
 
   return (
     <div className="form-container">
@@ -196,7 +189,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
         </div>
       </div>
       <Formm>
-        <div className="contact">
+        <div onChange={(e) => e.preventDefault()} className="contact">
           <hr />
           <div className="main-heading">
             <h2> Contact</h2>
@@ -208,6 +201,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <Label>Photo URL</Label>
               <input
                 type="text"
+                key={photoUrl}
                 name="photoUrl"
                 value={photoUrl}
                 onChange={handleContact}
@@ -215,6 +209,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <Label>Name</Label>
               <input
                 type="text"
+                key={name}
                 name="name"
                 value={name}
                 onChange={handleContact}
@@ -222,6 +217,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <Label>Address</Label>
               <input
                 type="text"
+                key={location}
                 name="location"
                 onChange={handleContact}
                 value={location}
@@ -230,12 +226,14 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="phone"
+                key={phone}
                 onChange={handleContact}
                 value={phone}
               />
               <Label>Email</Label>
               <input
                 type="text"
+                key={email}
                 name="email"
                 onChange={handleContact}
                 value={email}
@@ -244,6 +242,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="linkedin"
+                key={linkedin}
                 onChange={handleContact}
                 value={linkedin}
               />
@@ -251,6 +250,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="linkedin"
+                key={github}
                 onChange={handleContact}
                 value={github}
               />
@@ -258,6 +258,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="website"
+                key={website}
                 onChange={handleContact}
                 value={website}
               />
@@ -286,6 +287,10 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
           <hr />
           <div style={{ display: "flex" }}>
             <Heading>Skills</Heading>
+            <button className="btnDone" onClick={handleSkills}>
+              Done
+            </button>{" "}
+            <br />
             <textarea
               name="skills"
               cols="50"
@@ -294,15 +299,15 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               value={skills}
               onChange={(e) => setSkills(e.target.value)}
             ></textarea>
-            <button className="btnDone" onClick={handleSkills}>
-              Done
-            </button>
           </div>
         </Section_Skills>
         <Section_interests>
           <hr />
           <div style={{ display: "flex" }}>
             <Heading>Interests</Heading>
+            <button className="btnDone" onClick={handleInterests}>
+              Done
+            </button>
             <textarea
               name="skills"
               cols="50"
@@ -311,15 +316,11 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               value={interests}
               onChange={(e) => setInterests(e.target.value)}
             ></textarea>
-            <button className="btnDone" onClick={handleInterests}>
-              Done
-            </button>
           </div>
         </Section_interests>
-        <div className=""></div>
+        <hr />
+        <Heading>Involvement</Heading>
         <Section_Involvement>
-          <hr />
-          <Heading>Involvement</Heading>
           {Involvement.map((item, index) => {
             return (
               <div className="row container-fluid" key={index}>
@@ -345,7 +346,7 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
                   />
                 </div>
                 <button
-                  className="btn btn-sm btn-danger"
+                  className="btn btn-sm btn-danger remove"
                   onClick={() => deleteRow(Involvement, index)}
                 >
                   Remove
@@ -354,18 +355,18 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
             );
           })}
           <button
-            className="btn btn-sm btn-dark"
+            className="add btn btn-sm btn-dark"
             onClick={() => addRow(Involvement, { name: "", position: "" })}
           >
             Add
           </button>
         </Section_Involvement>
+        <Heading>Education</Heading>
+        <hr />
         <Section_Education>
-          <hr />
-          <Heading>Education</Heading>
           {education.map((item, index) => {
             return (
-              <div className="row container-fluid" key={index}>
+              <div className=" row container-fluid" key={index}>
                 <Item>
                   <input
                     type="text"
@@ -403,33 +404,33 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
                   />
 
                   <button
-                    className="btn"
+                    className="remove btn"
                     onClick={() => deleteRow(education, index)}
                   >
                     Remove
-                  </button>
-                  <button
-                    className="btn"
-                    onClick={() =>
-                      addRow(education, {
-                        year: "",
-                        course: "",
-                        institution: "",
-                        university: "",
-                        percentage: "",
-                      })
-                    }
-                  >
-                    Add
                   </button>
                 </Item>
               </div>
             );
           })}
+          <button
+            className="add btn"
+            onClick={() =>
+              addRow(education, {
+                year: "",
+                course: "",
+                institution: "",
+                university: "",
+                percentage: "",
+              })
+            }
+          >
+            Add
+          </button>
         </Section_Education>
+        <Heading>Experience</Heading>
+        <hr />
         <Section_Experience>
-          <hr />
-          <Heading>Experience</Heading>
           {experience.map((item, index) => {
             return (
               <div className="row container-fluid" key={index}>
@@ -475,31 +476,31 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
                   ></textarea>
                 </Item>
                 <button
-                  className="btn"
+                  className="remove btn"
                   onClick={() => deleteRow(experience, index)}
                 >
                   Remove
                 </button>
-                <button
-                  className="btn dark"
-                  onClick={() =>
-                    addRow(experience, {
-                      year: "",
-                      company: "",
-                      position: "",
-                      description: "",
-                    })
-                  }
-                >
-                  Add
-                </button>
               </div>
             );
           })}
+          <button
+            className="btn add dark"
+            onClick={() =>
+              addRow(experience, {
+                year: "",
+                company: "",
+                position: "",
+                description: "",
+              })
+            }
+          >
+            Add
+          </button>
         </Section_Experience>
+        <hr />
+        <Heading>Certification</Heading>
         <Section_Certification>
-          <hr />
-          <Heading>Certification</Heading>
           {certifications.map((item, index) => {
             return (
               <div className="row container" key={index}>
@@ -542,35 +543,35 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
                     }
                   ></textarea>
                   <button
-                    className="btn"
+                    className="remove btn"
                     onClick={() => deleteRow(certifications, index)}
                   >
                     Remove
-                  </button>
-                  <button
-                    className="btn dark"
-                    onClick={() =>
-                      addRow(certifications, {
-                        year: "",
-                        institution: "",
-                        course: "",
-                        description: "",
-                      })
-                    }
-                  >
-                    Add
                   </button>
                 </Item>
               </div>
             );
           })}
+          <button
+            className="btn add dark"
+            onClick={() =>
+              addRow(certifications, {
+                year: "",
+                institution: "",
+                course: "",
+                description: "",
+              })
+            }
+          >
+            Add
+          </button>
         </Section_Certification>
+        <Heading>Projects</Heading>
+        <hr />
         <Section_Projects>
-          <hr />
-          <Heading>Projects</Heading>
           {projects.map((item, index) => {
             return (
-              <div className="row container-fluid">
+              <div className="row container" key={index}>
                 <Item>
                   <input
                     type="text"
@@ -597,23 +598,23 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
                     }
                   ></textarea>
                   <button
-                    className="btn btn"
+                    className="btn remove btn"
                     onClick={() => deleteRow(projects, index)}
                   >
                     Remove
                   </button>
                 </Item>
-                <button
-                  className="btn btn-dark"
-                  onClick={() =>
-                    addRow(projects, { title: "", link: "", description: "" })
-                  }
-                >
-                  Add
-                </button>
               </div>
             );
           })}
+          <button
+            className="btn add btn-dark"
+            onClick={() =>
+              addRow(projects, { title: "", link: "", description: "" })
+            }
+          >
+            Add
+          </button>
         </Section_Projects>
       </Formm>
     </div>

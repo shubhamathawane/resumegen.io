@@ -5,6 +5,11 @@
   margin: 0%;
   padding: 20px;
 }
+.form-container input {
+  border-radius: 5px;
+  height: 20px;
+}
+
 .form-container .theme p {
   font-size: 18px;
   font-weight: bold;
@@ -44,9 +49,9 @@
   margin-right: 35px;
 }
 
-.row .item input,
-.item textarea {
-  width: 100%;
+.row,
+input .item textarea {
+  width: 96%;
   margin: 5px 0px 5px 0;
 }
 
@@ -91,8 +96,13 @@
   border-radius: 7px;
   color: rgb(40, 37, 53);
 }
+.involvement {
+  /* background: #fcf5f5; */
+  border-radius: 7px;
+  color: rgb(40, 37, 53);
+}
 
-.btnDone{
+.btnDone {
   padding: 10px;
   height: 40%;
   background-color: #389969;
@@ -101,9 +111,37 @@
   border-radius: 7px;
 }
 
-.textAreas{
+.textAreas {
   background-color: azure;
-  border-radius:7px;
-  
+  border-radius: 7px;
   border-style: none;
+}
+
+.add {
+  padding: 10px;
+  height: 40%;
+  background-color: #389969;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.remove {
+  padding: 10px;
+  height: 40%;
+  background-color: #993838;
+  color: white;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.educations {
+  padding: 30px 20px 40px 20px;
+  font-size: 15px;
+  word-spacing: 2px;
+  font-weight: 400;
+  line-height: 1.7;
+  background: #fcf5f5;
+  border-radius: 7px;
+  color: rgb(40, 37, 53);
 }

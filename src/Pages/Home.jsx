@@ -31,7 +31,7 @@ const Home = () => {
               <Button>Create One</Button>
             </Link>
             <h2>or UPLOAD JSON FILE</h2>
-            <File type="file" />
+            <File type="file"/>
           </Description>
           <Img_container>
             <Dev src={HomeImg} />

@@ -12,23 +12,7 @@ const LeftContent = ({ data, color }) => {
       return true;
     } else return false;
   };
-
-  // const Left_Content = styled.div`
-  //   width: 260px;
-  //   background-color: {color.background};
-  //   color: #0a0a0a;
-  //   padding: 5px 5px;
-  //   text {
-  //     font-size: 14px;
-  //     color: #0c0c0c;
-  //   }
-  //   .heading {
-  //     font-size: 15px;
-  //     margin-right: 6px;
-  //     color: #263238;
-  //   }
-  // `;
-
+  
   return (
     <div className="left-content" style={{backgroundColor:`${color.background}`}}>
       <Contact data={data} color={color} />

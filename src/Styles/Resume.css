@@ -4,7 +4,6 @@
   height: 250vh;
   display: flex;
   font-family: "Roboto", Helvetica, sans-serif;
-  
 }
 .left-content {
   width: 260px;
@@ -31,12 +30,12 @@
   align-items: center;
 }
 
-.contact a{
+.contact a {
   height: 50px;
   width: 56px;
 }
 
-.contact text{
+.contact text {
   margin: 10px;
   text-transform: uppercase;
   font-weight: 700;
@@ -90,23 +89,26 @@ a {
   padding: 2px 5px;
   margin: 5px 8px 5px 0;
   border-radius: 5px;
-  color: #1e1e1e;
-  background-color: #e0e0e0;
-  font-family: 'Courier New', Courier, monospace;
+  /* color: #1e1e1e; */
+  /* background-color: #e0e0e0; */
+  border-color: #59d69c;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .involvement {
   padding: 20px 5px 20px 10px;
 }
 
+
 .item .text {
-  margin: 5px 0 2px;
+  /* margin: 5px 0 2px; */
   padding: 0;
 }
 
 .item .rname {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 400;
+  
 }
 
 .resume .right-content hr {
@@ -139,6 +141,7 @@ a {
 .projects {
   padding: 10px 10px 0 10px;
   font-size: 14px;
+  background-origin: white;
 }
 
 .row-table {

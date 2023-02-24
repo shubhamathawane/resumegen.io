@@ -18,7 +18,7 @@ const Education = ({ data, color }) => {
     <div className="education">
       <p className="heading" style={{ color: `${color.primary}` }}>
         Education
-      </p>
+      </p>  
       <hr style={{ borderColor: `${color.primary}` }} />
       {edu.map((item, index) => (
         <div key={index} className="row-table">
