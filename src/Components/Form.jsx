@@ -201,7 +201,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <Label>Photo URL</Label>
               <input
                 type="text"
-                key={photoUrl}
                 name="photoUrl"
                 value={photoUrl}
                 onChange={handleContact}
@@ -209,7 +208,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <Label>Name</Label>
               <input
                 type="text"
-                key={name}
                 name="name"
                 value={name}
                 onChange={handleContact}
@@ -217,7 +215,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <Label>Address</Label>
               <input
                 type="text"
-                key={location}
                 name="location"
                 onChange={handleContact}
                 value={location}
@@ -226,14 +223,12 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="phone"
-                key={phone}
                 onChange={handleContact}
                 value={phone}
               />
               <Label>Email</Label>
               <input
                 type="text"
-                key={email}
                 name="email"
                 onChange={handleContact}
                 value={email}
@@ -242,7 +237,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="linkedin"
-                key={linkedin}
                 onChange={handleContact}
                 value={linkedin}
               />
@@ -250,7 +244,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="linkedin"
-                key={github}
                 onChange={handleContact}
                 value={github}
               />
@@ -258,7 +251,6 @@ const Form = ({ data, setData, preset, setColor, fonts, font, setFont }) => {
               <input
                 type="text"
                 name="website"
-                key={website}
                 onChange={handleContact}
                 value={website}
               />
